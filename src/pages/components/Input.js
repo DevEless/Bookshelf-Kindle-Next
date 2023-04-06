@@ -15,7 +15,7 @@ return (
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Entrez une valeur pour rechercher"
+        placeholder="Search a Book !"
     />
     <button className='button01' type="submit">
     <i class="fa-brands fa-searchengin"></i>

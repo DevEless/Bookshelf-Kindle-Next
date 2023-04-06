@@ -56,7 +56,7 @@ const CarouselComponent = () => {
                             </div>
                         </div>
                         <div className='flex justify-center items-end'>
-                            <Image src={slide.imageUrl} alt={`Slide ${index + 1}`} className='h-[400px]' />
+                            <Image src={slide.imageUrl} alt={`Slide ${index + 1}`} className='h-[600px]' />
                         </div>
                     </div>
                 ))
