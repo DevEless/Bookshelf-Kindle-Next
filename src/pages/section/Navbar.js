@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import BurgerMenuButton from '../components/BurgerMenuButton';
 import Sidebar from '../components/Sidebar';
+import InputForm from '../components/Input';
+import Sidebar2 from '../components/SidebarR';
 
 function Navbar() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -11,6 +13,16 @@ function Navbar() {
 
     const handleSidebarClose = () => {
         setIsSidebarOpen(false);
+    };
+
+    const [isSidebar2Open, setIsSidebar2Open] = useState(false);
+
+    const handleBurgerMenuClick2 = () => {
+        setIsSidebar2Open(!isSidebar2Open);
+    };
+
+    const handleSidebar2Close = () => {
+        setIsSidebar2Open(false);
     };
 
     return (
@@ -25,12 +37,16 @@ function Navbar() {
                     </span>
                     <span className='col' id='navCol2'>
                         
-                    <input placeholder='inputmoi'>
-                    </input>
+                    <InputForm/>
                     </span>
+                    
 
                     <span className='col' id='navCol3'>
-
+                    <i class="fa-solid fa-phone"></i>
+                        <p className='num01'>
+                    +32472693080
+                        </p>
+                    <i class="fa-solid fa-heart" onClick={handleBurgerMenuClick2}></i> 
                     </span>
                 </div>
 
@@ -41,6 +57,7 @@ function Navbar() {
             </nav>
 
             <Sidebar isOpen={isSidebarOpen} onClose={handleSidebarClose} />
+            <Sidebar2 isOpen={isSidebar2Open} onClose={handleSidebar2Close} />
         </div>
     );
 }
