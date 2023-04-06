@@ -11,7 +11,8 @@ function Home() {
       <Navbar/>
       <CarouselComponent/>
 
-
+{/* 
+    <script src="https://kit.fontawesome.com/dd3386e72b.js" crossorigin="anonymous"></script> */}
     </div>
   )
 }
