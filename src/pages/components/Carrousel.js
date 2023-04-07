@@ -34,7 +34,7 @@ const CarouselComponent = () => {
         >
             {
                 carouselData.map((slide, index) => (
-                    <div key={index} className='flex justify-center items-center bg-[#f6f8fa] h-[682px] gap-[400px]'>
+                    <div key={index} className='flex justify-center items-center bg-[#f6f8fa] h-[652px]  gap-[400px]'>
                         <div className='flex flex-col justify-center items-start text-start gap-14'>
                             <div className='flex flex-col gap-5'>
                                 <div className='text-[#5f8d7c] text-2xl font-semibold'>
