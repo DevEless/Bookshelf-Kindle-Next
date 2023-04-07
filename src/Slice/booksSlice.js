@@ -7,41 +7,45 @@ const initialState = {
     loading: true,
     visibleBooks: 8,
     filter: "",
-    initialBooks: [], 
-  };
+    initialBooks: [],
+};
 
 const booksSlice = createSlice({
-  name: "books",
-  initialState,
-  reducers: {
-    setBooks: (state, action) => {
-      state.books = action.payload;
-      state.loading = false;
-      state.initialBooks = action.payload; 
+    name: "books",
+    initialState,
+    reducers: {
+        setBooks: (state, action) => {
+            state.books = action.payload;
+            state.loading = false;
+            state.initialBooks = action.payload;
+        },
+        setFilteredBooks: (state, action) => {
+            state.filteredBooks = state.books.filter(
+                (book) =>
+                    book.title &&
+                    book.title.toLowerCase().startsWith(action.payload.toLowerCase())
+            );
+        },
+        setVisibleBooks: (state, action) => {
+            state.visibleBooks = action.payload;
+        },
+        setFilter: (state, action) => {
+            state.filter = action.payload;
+            state.visibleBooks = 8;
+
+        },
+        loadMoreBooks: (state) => {
+            state.visibleBooks += 8;
+        },
     },
-    setFilteredBooks: (state, action) => {
-      state.filteredBooks = state.books.filter(
-        (book) =>
-          book.title &&
-          book.title.toLowerCase().startsWith(action.payload.toLowerCase())
-      );
-    },
-    setVisibleBooks: (state, action) => {
-      state.visibleBooks = action.payload;
-    },
-    setFilter: (state, action) => {
-      state.filter = action.payload;
-      state.visibleBooks = 8;
-      
-    },
-  },
 });
 
 export const {
-  setBooks,
-  setFilteredBooks,
-  setVisibleBooks,
-  setFilter,
+    setBooks,
+    setFilteredBooks,
+    setVisibleBooks,
+    setFilter,
+    loadMoreBooks,
 } = booksSlice.actions;
 
 export default booksSlice.reducer;

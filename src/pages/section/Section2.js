@@ -4,9 +4,11 @@ import React from "react";
 import useBooks from "../components/useBooks";
 import Card from "../components/Card";
 import { loadMoreBooks } from "../../Slice/booksSlice";
+import { useDispatch } from "react-redux";
 
 const Section2 = () => {
     const { books, loading, visibleBooks, setVisibleBooks } = useBooks();
+    const dispatch = useDispatch();
     const handleLoadMore = () => {
         dispatch(loadMoreBooks());
     };
@@ -21,10 +23,9 @@ const Section2 = () => {
             {books.slice(0, visibleBooks).map((book) => (
                 <Card key={book.id} book={book} />
             ))}
-            {visibleBooks < books.length && (
-                <button className="bg-black-700 text-white h-full w-full" onClick={handleLoadMore}>Charger plus de livres</button>
+            
+                <button className="oui" onClick={handleLoadMore}>Charger plus de livres</button>
 
-            )}
         </div>
     );
 };
