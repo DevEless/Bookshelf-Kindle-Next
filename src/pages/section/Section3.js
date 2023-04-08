@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Card from '../components/Card2';
 
 function Section3() {
     return (
-        <div>Section3</div>
-    )
+        <div className="flex justify-center items-center h-1/2 w-screen">
+            <div className="p-8 mt-8 rounded-lg w-3/5">
+                <Card />
+            </div>
+        </div>
+    );
 }
 
-export default Section3
+export default Section3;
