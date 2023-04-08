@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import {
   setBooks,
   setFilteredBooks,
-  setVisibleBooks,
   setFilter,
   loadMoreBooks,
 } from "../../Slice/booksSlice";
