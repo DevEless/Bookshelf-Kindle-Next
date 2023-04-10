@@ -18,7 +18,7 @@ const LoginComponent = () => {
 
         if (user) {
             dispatch(login());
-            alert("Vous êtes connecté !");
+            alert("Welcome !");
         } else {
             alert("Identifiant ou mot de passe incorrect.");
         }
