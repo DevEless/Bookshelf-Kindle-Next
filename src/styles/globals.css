@@ -78,3 +78,74 @@ body{
   width: 100vw;
   margin-bottom: 5%;
 }
+
+#anim1-sweep-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+#anim1-sweep-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #3d5a4d;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+#anim1-sweep-to-right:hover, #anim1-sweep-to-right:focus, #anim1-sweep-to-right:active {
+  color: white;
+}
+#anim1-sweep-to-right:hover:before, #anim1-sweep-to-right:focus:before, #anim1-sweep-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
+#cardanim{
+  position: relative;
+}
+
+#textanim:hover #favorite-button {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+
+}
+#favorite-button {
+  position: absolute;
+  top: 96%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+#textanim {
+  transition: height 0.4s ease-in-out;
+  height: 100px;
+}
+
+#textanim:hover{
+  height: 150px !important;
+
+}
+
+

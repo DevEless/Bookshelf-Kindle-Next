@@ -50,7 +50,8 @@ const CarouselComponent = () => {
                                 Atque ipsum natus quis quam dolores.
                             </div>
                             <div>
-                                <button class="bg-[#5a8e7a] text-s text-white font-medium py-6 px-10 rounded">
+                                <button id='anim1-sweep-to-right' class="bg-[#5a8e7a] text-s text-white font-medium py-6 px-10 ">
+                                    
                                     Shop Now
                                 </button>
                             </div>

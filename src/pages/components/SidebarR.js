@@ -1,17 +1,39 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeFavorite } from '../../Slice/favoriteSlice'
 
 const Sidebar2 = ({ isOpen, onClose }) => {
+  const favorites = useSelector((state) => state.favorites);
+  const dispatch = useDispatch();
+
+  const handleRemoveFavorite = (id) => {
+    dispatch(removeFavorite(id));
+  };
   return (
     <>
+    
       <CSSTransition in={isOpen} timeout={200} classNames="sidebar2" unmountOnExit>
         <nav className="sidebar2">
-          {/* Ajoutez vos liens de menu ici */}
           <button onClick={onClose}>Fermer</button>
+          <div className="sidebar">
+      <h2>Favoris</h2>
+      {favorites.map((book) => (
+        <div key={book.id} className="favorite-book">
+          <img src={book.image_url} alt={book.title} />
+          <h3>{book.title}</h3>
+          <button id='anim1-sweep-to-right' className="bg-[#5a8e7a]  text-white p-2 " onClick={() => handleRemoveFavorite(book.id)}>
+            Supprimer
+          </button>
+        </div>
+      ))}
+    </div>
         </nav>
       </CSSTransition>
       <style jsx>{`
         .sidebar2 {
+          overflow-y: auto;
+
           position: fixed;
           top: 0;
           right: 0;
@@ -36,6 +58,7 @@ const Sidebar2 = ({ isOpen, onClose }) => {
           transform: translateX(100%);
           transition: transform 200ms ease-in;
         }
+
       `}</style>
     </>
   );
