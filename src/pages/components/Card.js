@@ -6,7 +6,7 @@ const Card = ({ book }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const favorites = useSelector((state) => state.favorites);
-
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
     const handleCardClick = () => {
         setIsModalOpen(true);
@@ -19,14 +19,19 @@ const Card = ({ book }) => {
     const dispatch = useDispatch();
 
     const handleAddFavorite = () => {
-        const isBookInFavorites = favorites.some((favorite) => favorite.id === book.id);
-
-        if (!isBookInFavorites) {
-            dispatch(addFavorite(book));
-        } else {
-            alert("Ce livre est déjà dans vos favoris.");
+        if (!isAuthenticated) {
+          alert("Veuillez vous connecter pour ajouter des favoris.");
+          return;
         }
-    };
+    
+        const isBookInFavorites = favorites.some((favorite) => favorite.id === book.id);
+    
+        if (!isBookInFavorites) {
+          dispatch(addFavorite(book));
+        } else {
+        alert("Ce livre est déjà dans vos favoris.");
+        }
+      };
 
     const Modal = () => (
         <div className="fixed z-10 inset-0 overflow-y-auto">

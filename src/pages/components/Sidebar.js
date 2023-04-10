@@ -1,12 +1,13 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
+import LoginComponent from './Connexion';
 
 const Sidebar = ({ isOpen, onClose }) => {
   return (
     <>
       <CSSTransition in={isOpen} timeout={200} classNames="sidebar" unmountOnExit>
         <nav className="sidebar">
-          {/* Ajoutez vos liens de menu ici */}
+          <LoginComponent/>
           <button onClick={onClose}>Fermer</button>
         </nav>
       </CSSTransition>
