@@ -53,7 +53,7 @@ const Card = ({ book }) => {
 
     return (
         <>
-            <div id="cardanim" className="w-3/4 rounded overflow-hidden shadow-lg mx-auto max-h-[600px]" >
+            <div id="cardanim" className="w-[300px] rounded overflow-hidden shadow-lg  max-h-[600px] mx-auto" >
                 <img className="w-full max-h-[380px] cursor-pointer" onClick={handleCardClick} src={book.image_url} alt={book.title} />
                 <div id="textanim" className="px-6 py-4 h-">
                     <div className="font-bold text-xl mb-2">{book.title}</div>

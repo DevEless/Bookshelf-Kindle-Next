@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from "../../Slice/booksSlice";
 
 
-function Navbar() {
+function Navbar2() {
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -92,4 +92,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default Navbar2;

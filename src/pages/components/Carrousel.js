@@ -31,6 +31,7 @@ const CarouselComponent = () => {
             showStatus={false}
             showIndicators={false}
             interval={3000}
+
         >
             {
                 carouselData.map((slide, index) => (

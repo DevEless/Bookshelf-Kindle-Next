@@ -31,7 +31,7 @@ const Section2 = () => {
                     </h1>
                 </div>
             </div>
-            <div id="s2" className="grid grid-cols-2 md:grid-cols-4 gap-4  bg-gray-100 ">
+            <div id="s2" className="grid grid-cols-2 md:grid-cols-4 gap-4  bg-gray-100 : ">
                 {books.slice(0, visibleBooks).map((book) => (
                     <Card key={book.id} book={book} />
                 ))}

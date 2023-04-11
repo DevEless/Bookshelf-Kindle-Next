@@ -41,10 +41,6 @@
   height: 60px;
   background-color: rgb(225, 225, 225);
 }
-body{
-
-  margin: 0;
-}
 
 
 #navCol1{
@@ -75,7 +71,7 @@ body{
 .oui{
   display: flex;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   margin-bottom: 5%;
 }
 

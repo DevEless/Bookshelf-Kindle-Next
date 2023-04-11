@@ -37,6 +37,20 @@ const booksSlice = createSlice({
         loadMoreBooks: (state) => {
             state.visibleBooks += 8;
         },
+        filterBooksByGenre: (state, action) => {
+            const genre = action.payload.toLowerCase();
+            if (genre === "") {
+                state.filteredBooks = state.books;
+            } else {
+                state.filteredBooks = state.books.filter((book) => {
+                    return book.genres && book.genres.split(", ").some((g) => g.toLowerCase() === genre);
+                });
+            }
+        },
+
+
+
+
     },
 });
 
@@ -46,6 +60,7 @@ export const {
     setVisibleBooks,
     setFilter,
     loadMoreBooks,
+    filterBooksByGenre,
 } = booksSlice.actions;
 
 export default booksSlice.reducer;

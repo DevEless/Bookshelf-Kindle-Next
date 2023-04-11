@@ -1,13 +1,18 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import LoginComponent from './Connexion';
+import Link from 'next/link';
+import Book from '../Bookshelf2/[Book]';
+
 
 const Sidebar = ({ isOpen, onClose }) => {
   return (
     <>
       <CSSTransition in={isOpen} timeout={200} classNames="sidebar" unmountOnExit>
         <nav className="sidebar">
-          <LoginComponent/>
+          <LoginComponent/> 
+          <Link href="/Bookshelf2/Book"> All Books</Link>
+
           <button onClick={onClose}>Fermer</button>
         </nav>
       </CSSTransition>
