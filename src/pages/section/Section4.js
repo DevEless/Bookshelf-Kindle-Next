@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import { filterBooksByGenre } from '../../Slice/booksSlice'
 import { setFilter } from "../../Slice/booksSlice";
 import { useSelector } from "react-redux";
+import { sortBooksByTitle } from "../../Slice/booksSlice";
+import {filterBooksByAuthor} from "../../Slice/booksSlice"
 
 const Section4 = () => {
     const { books, loading, visibleBooks } = useBooks();
@@ -16,6 +18,12 @@ const Section4 = () => {
     };
     const handleFilterChange = (genre) => {
         dispatch(filterBooksByGenre(genre));
+    };
+    const handleSortByTitle = (sortOrder) => {
+        dispatch(sortBooksByTitle(sortOrder));
+    };
+    const handleAuthorSearch = (authorName) => {
+        dispatch(filterBooksByAuthor(authorName));
     };
 
 
@@ -35,8 +43,9 @@ const Section4 = () => {
                                 type="text"
                                 maxLength="8"
                                 className="w-[100%] border-2 border-gray-300 px-4 py-2 focus:outline-none focus:border-[#5a8e7a]"
-                                value={filter}
-                                onChange={(e) => dispatch(setFilter(e.target.value))}
+                                
+                                placeholder="Recherche par auteur"
+                                onChange={(e) => handleAuthorSearch(e.target.value)}
                             />
 
                         </div>
@@ -55,12 +64,16 @@ const Section4 = () => {
                         </div>
                         <div>
 
-                            <select
-                                className="w-[100%] border-2 border-gray-300 px-4 py-2  focus:outline-none focus:border-[#5a8e7a]"
-                            >
-                                <option value="">Choisir une option</option>
-                                {/* Insérez vos options ici */}
-                            </select>
+                        <select
+  className="w-[100%] border-2 border-gray-300 px-4 py-2  focus:outline-none focus:border-[#5a8e7a]"
+  onChange={(e) => handleSortByTitle(e.target.value)}
+>
+  <option value="">Choisir une option</option>
+  <option value="asc">Trier les titres de A à Z</option>
+  <option value="desc">Trier les titres de Z à A</option>
+  {/* Insérez vos options ici */}
+</select>
+
                         </div>
                     </div>
                 </div>

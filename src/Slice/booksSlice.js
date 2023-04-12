@@ -47,6 +47,27 @@ const booksSlice = createSlice({
                 });
             }
         },
+        sortBooksByTitle: (state, action) => {
+            const sortOrder = action.payload;
+            state.filteredBooks = state.filteredBooks.slice().sort((a, b) => {
+                const titleA = a.title.toLowerCase();
+                const titleB = b.title.toLowerCase();
+
+                if (sortOrder === "asc") {
+                    return titleA.localeCompare(titleB);
+                } else if (sortOrder === "desc") {
+                    return titleB.localeCompare(titleA);
+                }
+                return 0;
+            });
+        },
+        filterBooksByAuthor: (state, action) => {
+            const authorName = action.payload.toLowerCase();
+            state.filteredBooks = state.books.filter((book) =>
+                book.authors && book.authors.toLowerCase().includes(authorName)
+            );
+        },
+
 
 
 
@@ -61,6 +82,8 @@ export const {
     setFilter,
     loadMoreBooks,
     filterBooksByGenre,
+    sortBooksByTitle,
+    filterBooksByAuthor,
 } = booksSlice.actions;
 
 export default booksSlice.reducer;
