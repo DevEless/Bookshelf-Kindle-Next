@@ -22,10 +22,10 @@ const Sidebar2 = ({ isOpen, onClose }) => {
           </div>
           <div className="sidebar">
       {favorites.map((book) => (
-        <div key={book.id} className="favorite-book">
-          <img src={book.image_url} alt={book.title} />
+        <div key={book.id} className="favorite-book mt-3">
+          <img className='max-w-[50%]' src={book.image_url} alt={book.title} />
           <h3>{book.title}</h3>
-          <button id='anim1-sweep-to-right' className="bg-[#5a8e7a]  text-white p-2 " onClick={() => handleRemoveFavorite(book.id)}>
+          <button id='anim1-sweep-to-right' className="bg-[#5a8e7a]  text-white p-1" onClick={() => handleRemoveFavorite(book.id)}>
             Supprimer
           </button>
         </div>

@@ -1,32 +1,36 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavorite } from "@/Slice/favoriteSlice";
-import DetailBook from '../book/[id]'
 import { router } from 'next/router';
+import Modal from "react-modal";
+
 const Card = ({ book }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const favorites = useSelector((state) => state.favorites);
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
-
+    const [notAuthenticatedModalOpen, setNotAuthenticatedModalOpen] = useState(false);
+    const [bookInFavoritesModalOpen, setBookInFavoritesModalOpen] = useState(false);
+    
 
     const dispatch = useDispatch();
 
     const handleAddFavorite = () => {
         if (!isAuthenticated) {
-            alert("Veuillez vous connecter pour ajouter des favoris.");
+            setNotAuthenticatedModalOpen(true);
             return;
         }
-
+    
         const isBookInFavorites = favorites.some((favorite) => favorite.id === book.id);
-
+    
         if (!isBookInFavorites) {
             dispatch(addFavorite(book));
         } else {
-            alert("Ce livre est déjà dans vos favoris.");
+            setBookInFavoritesModalOpen(true);
         }
     };
+    
 
 
     const DetailBook = (book) => {
@@ -45,6 +49,28 @@ const Card = ({ book }) => {
                 </div>
             </div>
             {isModalOpen && <Modal />}
+            <Modal
+    isOpen={notAuthenticatedModalOpen}
+    onRequestClose={() => setNotAuthenticatedModalOpen(false)}
+    contentLabel="Connexion requise"
+    className="error-modal"
+>
+    <h2>Connexion requise</h2>
+    <p>Veuillez vous connecter pour ajouter des favoris.</p>
+    <button onClick={() => setNotAuthenticatedModalOpen(false)}>X</button>
+</Modal>
+
+<Modal
+    isOpen={bookInFavoritesModalOpen}
+    onRequestClose={() => setBookInFavoritesModalOpen(false)}
+    contentLabel="Livre déjà dans les favoris"
+    className="error-modal"
+>
+    <h2>Livre déjà dans les favoris</h2>
+    <p>Ce livre est déjà dans vos favoris.</p>
+    <button onClick={() => setBookInFavoritesModalOpen(false)}>X</button>
+</Modal>
+
         </>
     );
 };
