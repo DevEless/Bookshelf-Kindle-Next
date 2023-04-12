@@ -27,7 +27,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-6 border-t border-white border-opacity-25 pt-6 md:flex md:items-center md:justify-between">
+        <div id='foot2' className="mt-6 border-t border-white border-opacity-25 pt-6 md:flex md:items-center md:justify-between">
           <div className="text-lg font-bold">Your Word Here</div>
           <div className="text-lg">Your Text Here</div>
         </div>

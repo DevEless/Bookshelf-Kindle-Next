@@ -4,7 +4,7 @@ import Card from "../components/Card";
 import { loadMoreBooks } from "../../Slice/booksSlice";
 import { useDispatch } from "react-redux";
 import { filterBooksByGenre } from '../../Slice/booksSlice'
-import { setFilter } from "../../Slice/booksSlice";
+
 import { useSelector } from "react-redux";
 import { sortBooksByTitle } from "../../Slice/booksSlice";
 import {filterBooksByAuthor} from "../../Slice/booksSlice"
@@ -71,7 +71,7 @@ const Section4 = () => {
   <option value="">Choisir une option</option>
   <option value="asc">Trier les titres de A à Z</option>
   <option value="desc">Trier les titres de Z à A</option>
-  {/* Insérez vos options ici */}
+
 </select>
 
                         </div>

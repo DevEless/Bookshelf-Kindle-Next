@@ -218,3 +218,28 @@ body {
   border-radius: 5px;
   text-align: center;
 }
+
+@media (max-width: 767px) {
+  #rs3{
+    width: 100%;
+  }
+  #cardanim{
+    width: 95%;
+  }
+  .navElement{
+    width: 100%;
+  }
+  #navCol3{
+    display: none;
+  }
+  #carou{
+    width: 280%;
+    text-align: center;
+  }
+  #res3{
+    width: 120%;
+  }
+  #foot2{
+    text-align: center;
+  }
+}
