@@ -10,7 +10,6 @@ import axios from "axios";
 
 const useBooks = () => {
     const dispatch = useDispatch();
-    const books = useSelector((state) => state.books.initialBooks); 
     const filteredBooks = useSelector((state) => state.books.filteredBooks);
     const loading = useSelector((state) => state.books.loading);
     const visibleBooks = useSelector((state) => state.books.visibleBooks);

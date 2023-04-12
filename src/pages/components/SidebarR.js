@@ -15,9 +15,12 @@ const Sidebar2 = ({ isOpen, onClose }) => {
     
       <CSSTransition in={isOpen} timeout={200} classNames="sidebar2" unmountOnExit>
         <nav className="sidebar2">
-          <button onClick={onClose}>Fermer</button>
+          <div className='flex justify-between'>
+        <h2 className='font-light border-b-4'>Favoris</h2>
+          <button className='font-bold' onClick={onClose}>X</button>
+
+          </div>
           <div className="sidebar">
-      <h2>Favoris</h2>
       {favorites.map((book) => (
         <div key={book.id} className="favorite-book">
           <img src={book.image_url} alt={book.title} />
@@ -37,7 +40,7 @@ const Sidebar2 = ({ isOpen, onClose }) => {
           position: fixed;
           top: 0;
           right: 0;
-          width: 250px;
+          width: 350px;
           height: 100%;
           background-color: #f8f8f8;
           padding: 1rem;

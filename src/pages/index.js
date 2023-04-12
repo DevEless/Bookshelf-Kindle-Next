@@ -16,8 +16,8 @@ function Home() {
       <Section2/>
       <Section3/>
       <Footer/>
-{/* 
-    <script src="https://kit.fontawesome.com/dd3386e72b.js" crossorigin="anonymous"></script> */}
+ 
+
     </div>
   )
 }

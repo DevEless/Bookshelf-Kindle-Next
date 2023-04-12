@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import BurgerMenuButton from '../components/BurgerMenuButton';
 import Sidebar from '../components/Sidebar';
 import useBooks from '../components/useBooks';
+import {AiOutlineHeart} from 'react-icons/ai'
+import Link from 'next/link';
+
 
 import Sidebar2 from '../components/SidebarR';
 
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from "../../Slice/booksSlice";
+
 
 
 function Navbar() {
@@ -41,8 +45,10 @@ function Navbar() {
                 <div className='row' id='navRow'>
                     <span className='col' id='navCol1'>
                 <BurgerMenuButton onClick={handleBurgerMenuClick} />
-
-                <p id='navText' className='text-white'>BACHIR.</p>
+                <Link href={'/'}>
+                <p id='navText' className='text-black'>BOOKSHELF.</p>
+                
+                </Link>
                     </span>
                     <span className='col' id='navCol2'>
                         
@@ -72,11 +78,11 @@ function Navbar() {
                     
 
                     <span className='col' id='navCol3'>
-                    <i class="fa-solid fa-phone"></i>
+                 
                         <p className='num01'>
                     +32472693080
                         </p>
-                    <i class="fa-solid fa-heart" onClick={handleBurgerMenuClick2}></i> 
+                        <AiOutlineHeart onClick={handleBurgerMenuClick2}/>
                     </span>
                 </div>
 
