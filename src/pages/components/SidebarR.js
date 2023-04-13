@@ -3,6 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFavorite } from '../../Slice/favoriteSlice'
 
+
 const Sidebar2 = ({ isOpen, onClose }) => {
   const favorites = useSelector((state) => state.favorites);
   const dispatch = useDispatch();

@@ -23,12 +23,12 @@ export const BookDetailsPage = () => {
             <h1>{book.title}</h1>
             <p>By {book.authors}</p>
             </div>
-            <div class="flex mt-8">
-                <div class="w-1/2 p-4 m">
+            <div id='paté' class="flex mt-8">
+                <div id='paté1'  class="w-1/2 p-4 m">
                     <img src={book.image_url} alt="" width={350} height={350} className='mx-auto' style={{ objectFit: 'cover' }} />
                 </div>
-                <div class="w-1/2 p-24">
-                    <p>{book.description}</p>
+                <div id='paté4'  class="w-1/2 p-24">
+                    <p id='paté2'>{book.description}</p>
                 </div>
             </div>
 

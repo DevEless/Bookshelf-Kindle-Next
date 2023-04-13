@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import BurgerMenuButton from '../components/BurgerMenuButton';
 import Sidebar from '../components/Sidebar';
-import useBooks from '../components/useBooks';
+import Link from 'next/link';
+import {AiOutlineHeart} from 'react-icons/ai'
 
 import Sidebar2 from '../components/SidebarR';
 
@@ -30,7 +31,7 @@ function Navbar2() {
     const handleSidebar2Close = () => {
         setIsSidebar2Open(false);
     };
-    const { handleFilterChange } = useBooks();
+
     const filter = useSelector((state) => state.books.filter);
     const dispatch = useDispatch();
 
@@ -42,7 +43,10 @@ function Navbar2() {
                     <span className='col' id='navCol1'>
                 <BurgerMenuButton onClick={handleBurgerMenuClick} />
 
-                <p id='navText' className='text-white'>BACHIR.</p>
+                <Link href={'/'}>
+                <p id='navText' className='text-black'>BOOKSHELF.</p>
+                
+                </Link>
                     </span>
                     <span className='col' id='navCol2'>
                         
@@ -76,7 +80,7 @@ function Navbar2() {
                         <p className='num01'>
                     +32472693080
                         </p>
-                    <i class="fa-solid fa-heart" onClick={handleBurgerMenuClick2}></i> 
+                    <AiOutlineHeart onClick={handleBurgerMenuClick2}></AiOutlineHeart> 
                     </span>
                 </div>
 

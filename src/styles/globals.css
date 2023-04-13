@@ -261,6 +261,19 @@ body {
   #s4{
     margin-top: 5%;
   }
+  #paté{
+    display: flex;
+    flex-direction: column;
+  }
+  #paté1{
+    width: 100%;
+  }
+  #paté2{
+    width: 100%;
+  }
+  #paté4{
+    width: 100%;
+  }
 
 }
 
@@ -316,6 +329,10 @@ body {
   #s4{
     margin-top: 5%;
   }
+  #fini{
+    display: block !important;
+    text-align: center;
+  }
 
 }
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
@@ -328,5 +345,13 @@ body {
   #titre433{
     text-align: center;
   } 
+  #fini{
+    display: block !important;
+    text-align: center;
+  }
+
 }
 
+#fini{
+  opacity: none;
+}

@@ -3,10 +3,21 @@ import { CSSTransition } from 'react-transition-group';
 import LoginComponent from './Connexion';
 import Link from 'next/link';
 import Book from '../Bookshelf2/[Book]';
+import { useState } from 'react';
+import Sidebar2 from './SidebarR';
 
 
 
 const Sidebar = ({ isOpen, onClose }) => {
+  const [isSidebar2Open, setIsSidebar2Open] = useState(false);
+  const handleBurgerMenuClick2 = () => {
+    setIsSidebar2Open(!isSidebar2Open);
+};
+
+const handleSidebar2Close = () => {
+    setIsSidebar2Open(false);
+};
+
   return (
     <>
       <CSSTransition in={isOpen} timeout={200} classNames="sidebar" unmountOnExit>
@@ -42,7 +53,10 @@ const Sidebar = ({ isOpen, onClose }) => {
       <span className='mt-8 flex justify-start cursor-pointer text-lg'>
     <LoginComponent/> 
 
+
       </span>
+    <p id='fini' className="cursor-pointor w-[100%] border-2 flex justify-around hover:bg-gray-300 mt-5 display" onClick={handleBurgerMenuClick2}>Favoris </p>
+      
         </nav>
       </CSSTransition>
       <style jsx>{`
@@ -73,6 +87,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           }
           
       `}</style>
+                  <Sidebar2 isOpen={isSidebar2Open} onClose={handleSidebar2Close} />
     </>
   );
 };
