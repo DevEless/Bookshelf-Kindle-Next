@@ -6,26 +6,37 @@ import { useDispatch } from "react-redux";
 import { filterBooksByGenre } from '../../Slice/booksSlice'
 import React, { useState } from "react";
 import { Transition } from "react-transition-group";
-
+import { useEffect } from "react";
 import { AiFillCaretDown} from "react-icons/ai";
 import { sortBooksByTitle } from "../../Slice/booksSlice";
 import { filterBooksByAuthor } from "../../Slice/booksSlice"
 
+
 const Section4 = () => {
+    const [btn, setBtn] = useState(null);
+    useEffect(() => {
+        setBtn(document.getElementById('prince'));
+    
+    }, []);
     const { books, loading, visibleBooks } = useBooks();
 
     const dispatch = useDispatch();
     const handleLoadMore = () => {
         dispatch(loadMoreBooks());
+        btn.classList.remove('display')
     };
     const handleFilterChange = (genre) => {
         dispatch(filterBooksByGenre(genre));
+        btn.classList.add('display')
+        
     };
     const handleSortByTitle = (sortOrder) => {
         dispatch(sortBooksByTitle(sortOrder));
+        btn.classList.add('display')
     };
     const handleAuthorSearch = (authorName) => {
         dispatch(filterBooksByAuthor(authorName));
+        btn.classList.add('display')
     };
 
     const [showDropdown, setShowDropdown] = useState(false);
@@ -212,7 +223,7 @@ const Section4 = () => {
                         {books.slice(0, visibleBooks).map((book) => (
                             <Card key={book.id} book={book} />
                         ))}
-                        <span className="oui">
+                        <span id="prince" className="oui">
                             <button
                                 id="anim1-sweep-to-right"
                                 className="bg-[#5a8e7a] text-white uppercase tracking-wider py-2 px-4 h-12 mt-4"

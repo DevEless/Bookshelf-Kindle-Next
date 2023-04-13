@@ -353,5 +353,9 @@ body {
 }
 
 #fini{
-  opacity: none;
+  display: none;
+}
+
+.display{
+  display: none;
 }
