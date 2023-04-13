@@ -56,7 +56,7 @@ export const BookDetailsPage = () => {
                 </div>
                 <div id='paté4'  class="w-1/2 p-24">
                     <p id='paté2'>{book.description}</p>
-                    <button id="favorite-button2" className="bg-[#5a8e7a] text-white p-2 mt-2" onClick={handleAddFavorite}>
+                    <button id="favorite-button2 " className="bg-[#5a8e7a] text-white p-2 mt-2" onClick={handleAddFavorite}>
                         Add to favorites
                     </button>
                 </div>

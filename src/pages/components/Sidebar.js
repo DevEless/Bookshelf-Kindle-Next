@@ -35,18 +35,7 @@ const handleSidebar2Close = () => {
 
           <Link href="/Bookshelf2/Book"> All Books</Link>
             </span>
-            <span className='flex justify-start mt-5'>
 
-<Link href="/Bookshelf2/Book"> All Books</Link>
-  </span> 
-  <span className='flex justify-start mt-5'>
-
-<Link href="/Bookshelf2/Book"> All Books</Link>
-  </span>
-              <span className='flex justify-start mt-5'>
-
-          <Link href="/Bookshelf2/Book"> All Books</Link>
-            </span>
           </span>
 
 
