@@ -5,7 +5,7 @@ import {GiFallingBoulder} from 'react-icons/gi'
 
 const Footer = () => {
   return (
-    <footer className="bg-sky-950 text-white">
+    <footer id='foot' className="bg-sky-950 text-white">
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="md:flex md:items-center md:justify-between">
           <div className="flex items-center justify-center md:justify-start md:flex-grow">

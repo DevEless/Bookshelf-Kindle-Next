@@ -41,8 +41,8 @@ const Card = ({ book }) => {
             <div id="cardanim" className="w-[300px] rounded overflow-hidden shadow-lg  max-h-[600px] mx-auto" >
                 <img className="w-full max-h-[380px] cursor-pointer" onClick={() => DetailBook(book)} src={book.image_url} alt={book.title} />
                 <div id="textanim" className="px-6 py-4 h-">
-                    <div className="font-bold text-xl mb-2">{book.title}</div>
-                    <p className="text-gray-700 text-base">{book.authors}</p>
+                    <div id="titre" className="font-bold text-m mb-2">{book.title}</div>
+                    <p id='titre2' className="text-gray-700 text-base">{book.authors}</p>
                     <button id="favorite-button" className="bg-[#5a8e7a] text-white p-2 mb-2" onClick={handleAddFavorite}>
                         Add to favorites
                     </button>
