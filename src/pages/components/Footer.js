@@ -14,7 +14,7 @@ const Footer = () => {
             </div>
             <div className="text-xl font-bold flex justify-center items-center"> 
             <BsStack className='text-[#5a8e7a]'/>    
-            <p className='ml-4'> Your Title Here</p> 
+            <p className='ml-4'>Book information ?</p> 
             </div>
           </div>
           <div className="flex items-center justify-center md:justify-end mt-4 md:mt-0">
@@ -23,13 +23,14 @@ const Footer = () => {
             </div>
             <div className="text-xl font-bold flex justify-center items-center"> 
             <GiFallingBoulder className='text-[#5a8e7a]'/>    
-            <p className='ml-4'> Your Title Here</p> 
+            <p className='ml-4'> Please send us a email at Kadri@gmail.com</p> 
             </div>
           </div>
         </div>
         <div id='foot2' className="mt-6 border-t border-white border-opacity-25 pt-6 md:flex md:items-center md:justify-between">
-          <div className="text-lg font-bold">Your Word Here</div>
-          <div className="text-lg">Your Text Here</div>
+          <div className="text-lg font-bold">Need Help?</div>
+          <div className="text-lg">Please call us at 0123456798
+          </div>
         </div>
       </div>
     </footer>
